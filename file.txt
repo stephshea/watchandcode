@@ -1,0 +1,52 @@
+//array -- list// -- console.log Version 1
+
+['item 1', 'item 2', 'item 3']
+(3) ["item 1", "item 2", "item 3"]
+var todos = ['item 1', 'item 2', 'item 3']
+undefined
+todos
+(3) ["item 1", "item 2", "item 3"]
+console.log("these are my todos" + todos);
+VM322:1 these are my todositem 1,item 2,item 3
+undefined
+console.log("these are my todos" + " " + todos);
+VM323:1 these are my todos item 1,item 2,item 3
+undefined
+console.log("these are my todos", todos)
+VM327:1 these are my todos (3) ["item 1", "item 2", "item 3"]
+undefined
+console.log("these are my todos",todos)
+VM328:1 these are my todos (3) ["item 1", "item 2", "item 3"]
+undefined
+todos.push("item 4")
+4
+todos
+(4) ["item 1", "item 2", "item 3", "item 4"]
+todos.push("item 5");
+5
+todos
+(5) ["item 1", "item 2", "item 3", "item 4", "item 5"]
+todos[0]
+"item 1"
+todos[1]
+"item 2"
+todos[2]
+"item 3"
+todos[4]
+"item 5"
+todos[5]
+undefined
+todos[0] = 'item 1 updated'
+"item 1 updated"
+todos
+(5) ["item 1 updated", "item 2", "item 3", "item 4", "item 5"]
+todos.splice(0,1)
+["item 1 updated"]
+todos
+(4) ["item 2", "item 3", "item 4", "item 5"]
+todos.splice(3)
+["item 5"]
+todos
+(3) ["item 2", "item 3", "item 4"]
+todos.splice(3)
+[]
