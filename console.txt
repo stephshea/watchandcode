@@ -1,0 +1,28 @@
+Version 2
+
+var todos = ['item 1', 'item 2', 'item 3']
+
+undefined
+todos
+(3) ["item 1", "item 2", "item 3"]
+function displayTodos() {
+	console.log('My todos:', todos);
+}
+
+undefined
+displayTodos()
+VM171:2 My todos: (3) ["item 1", "item 2", "item 3"]
+
+function changeTodo(position, newValue) {
+	todos[position] = newValue; 
+	displayTodos()
+}
+
+changeTodo([0], 'changed again')
+VM171:2 My todos: (7) ["changed again", "item 2", "item 3", "new todo", "new todo", "new todo", "hello"]
+
+deleteTodo(2)
+undefined
+displayTodos()
+VM171:2 My todos: (4) ["item 2", "item 3", "new todo", "hello"]
+undefined
