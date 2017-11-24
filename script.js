@@ -14,6 +14,7 @@ var todoList = {
         } 
         }
     },
+    
     addTodo: function(todoText) {
         this.todos.push({
             todoText: todoText,
@@ -21,11 +22,12 @@ var todoList = {
             });
         this.displayTodos();
     },
+    
     changeTodo: function(position, todoText) {
-    //this.todos[position] = newValue;//
     this.todos[position].todoText =todoText
     this.displayTodos();
     },
+    
     deleteTodo: function(position) {
     this.todos.splice(position, 1);
     this.displayTodos();
@@ -35,7 +37,7 @@ var todoList = {
         todo.completed = !todo.completed;
         this.displayTodos();
     },
-
+    
     toggleAll: function() {
     var totalTodos = this.todos.length;
     var completedTodos = 0;
@@ -55,8 +57,41 @@ var todoList = {
         }
     }
     this.displayTodos();
-    
-    
     }
-
 };
+
+var handlers = {
+  displayTodos: function() {
+    todoList.displayTodos(); 
+  },
+  addTodo: function() {
+    var addTodoTextInput =  document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = '';
+  },
+  changeTodo: function() {
+      var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
+      var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+      todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+      changeTodoTextInput.value ='';
+      changeTodoTextInput.value ='';
+  },
+  deleteTodo: function() {
+      var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+      todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+      deleteTodoPositionInput.value = '';
+  },
+  
+  toggleCompleted() {
+      var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+      todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+      toggleCompletedPositionInput.value = '';
+  }, 
+  
+   toggleAll: function() {
+    todoList.toggleAll();
+  }
+  };
+  
+
+ 
